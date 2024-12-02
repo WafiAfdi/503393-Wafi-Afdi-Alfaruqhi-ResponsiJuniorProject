@@ -75,7 +75,20 @@ namespace Proyek_Responsi
         {
             if (_selected_karyawan != null)
             {
-                _crudService.EditKaryawan(_selected_karyawan);
+                int dep = -1;
+                string nama_dep = "";
+                bool found = false;
+                for (int i = 0; i < departemens_tersedia.Count; i++)
+                {
+                    if (dep_karyawan_combobox.SelectedItem.ToString() == departemens_tersedia[i].Nama_Dep)
+                    {
+                        dep = departemens_tersedia[i].Id_Dep;
+                        nama_dep = departemens_tersedia[i].Nama_Dep;
+                        found = true;
+                        break;
+                    }
+                }
+                _crudService.EditKaryawan(_selected_karyawan, nama_karyawan_textbox.Text, dep);
                 data_karyawan_grid.DataSource = _crudService.GetAllKaryawan();
             }
             else

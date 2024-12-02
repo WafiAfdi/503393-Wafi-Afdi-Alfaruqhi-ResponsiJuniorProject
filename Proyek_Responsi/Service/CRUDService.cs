@@ -57,7 +57,7 @@ namespace Proyek_Responsi.Service
 
         }
 
-        public void EditKaryawan(Karyawan karyawan)
+        public void EditKaryawan(Karyawan karyawan, string nama, int id_Dep)
         {
             string query = @"
                 UPDATE karyawan SET nama = @nama_, id_dep = @id_dep_ WHERE id_karyawan = @id_karyawan_;
@@ -65,8 +65,8 @@ namespace Proyek_Responsi.Service
             ";
             var command = new NpgsqlCommand(query, _conn);
             command.Parameters.AddWithValue("id_karyawan_", karyawan.Id_Karyawan);
-            command.Parameters.AddWithValue("nama_", karyawan.Nama);
-            command.Parameters.AddWithValue("id_dep_", karyawan.Id_Dep);
+            command.Parameters.AddWithValue("nama_", nama);
+            command.Parameters.AddWithValue("id_dep_", id_Dep);
 
             try
             {
