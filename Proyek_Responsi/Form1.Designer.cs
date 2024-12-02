@@ -34,7 +34,13 @@
             label2 = new Label();
             nama_karyawan_textbox = new TextBox();
             dep_karyawan_combobox = new ComboBox();
+            insert_btn = new Button();
+            edit_btn = new Button();
+            delete_btn = new Button();
+            dataGridView1 = new DataGridView();
+            richTextBox1 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -90,11 +96,65 @@
             dep_karyawan_combobox.Size = new Size(121, 23);
             dep_karyawan_combobox.TabIndex = 6;
             // 
+            // insert_btn
+            // 
+            insert_btn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            insert_btn.Location = new Point(12, 213);
+            insert_btn.Name = "insert_btn";
+            insert_btn.Size = new Size(100, 32);
+            insert_btn.TabIndex = 7;
+            insert_btn.Text = "Insert";
+            insert_btn.UseVisualStyleBackColor = true;
+            // 
+            // edit_btn
+            // 
+            edit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            edit_btn.Location = new Point(244, 213);
+            edit_btn.Name = "edit_btn";
+            edit_btn.Size = new Size(100, 32);
+            edit_btn.TabIndex = 8;
+            edit_btn.Text = "Edit";
+            edit_btn.UseVisualStyleBackColor = true;
+            // 
+            // delete_btn
+            // 
+            delete_btn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            delete_btn.Location = new Point(489, 213);
+            delete_btn.Name = "delete_btn";
+            delete_btn.Size = new Size(100, 32);
+            delete_btn.TabIndex = 9;
+            delete_btn.Text = "Delete";
+            delete_btn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 264);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(577, 174);
+            dataGridView1.TabIndex = 10;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = SystemColors.ControlLight;
+            richTextBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox1.Location = new Point(436, 12);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.Size = new Size(153, 175);
+            richTextBox1.TabIndex = 11;
+            richTextBox1.Text = "ID Departemen : \nHR : HR\nENG : Engineer\nDEV : developer\nPM : Product M\nFIN : Finance";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(601, 450);
+            Controls.Add(richTextBox1);
+            Controls.Add(dataGridView1);
+            Controls.Add(delete_btn);
+            Controls.Add(edit_btn);
+            Controls.Add(insert_btn);
             Controls.Add(dep_karyawan_combobox);
             Controls.Add(nama_karyawan_textbox);
             Controls.Add(label2);
@@ -104,6 +164,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +177,10 @@
         private Label label2;
         private TextBox nama_karyawan_textbox;
         private ComboBox dep_karyawan_combobox;
+        private Button insert_btn;
+        private Button edit_btn;
+        private Button delete_btn;
+        private DataGridView dataGridView1;
+        private RichTextBox richTextBox1;
     }
 }
