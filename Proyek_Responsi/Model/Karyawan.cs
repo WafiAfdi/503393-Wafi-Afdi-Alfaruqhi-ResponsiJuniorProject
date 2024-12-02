@@ -11,5 +11,6 @@ namespace Proyek_Responsi.Model
         public string? Id_Karyawan {  get; set; }
         public string? Nama { get; set; }
         public int Id_Dep {  get; set; }
+        public string? Nama_Dep { get; set; }
     }
 }

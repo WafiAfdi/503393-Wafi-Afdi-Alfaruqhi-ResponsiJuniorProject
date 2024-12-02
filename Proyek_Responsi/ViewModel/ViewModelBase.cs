@@ -1,4 +1,5 @@
-﻿using Proyek_Responsi.Service;
+﻿using Proyek_Responsi.Model;
+using Proyek_Responsi.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,6 @@ namespace Proyek_Responsi.ViewModel
     {
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        
 
         public void OnPropertyChanged(string propertyName = null)
         {

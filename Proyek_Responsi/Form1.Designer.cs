@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             label_logo = new Label();
             label1 = new Label();
@@ -37,10 +38,14 @@
             insert_btn = new Button();
             edit_btn = new Button();
             delete_btn = new Button();
-            dataGridView1 = new DataGridView();
+            data_karyawan_grid = new DataGridView();
             richTextBox1 = new RichTextBox();
+            mainWindowViewModelBindingSource = new BindingSource(components);
+            mainWindowViewModelBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)data_karyawan_grid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mainWindowViewModelBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mainWindowViewModelBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -91,6 +96,7 @@
             // dep_karyawan_combobox
             // 
             dep_karyawan_combobox.FormattingEnabled = true;
+            dep_karyawan_combobox.Items.AddRange(new object[] { "HR", "ENG", "DEV", "PM", "FIN" });
             dep_karyawan_combobox.Location = new Point(153, 168);
             dep_karyawan_combobox.Name = "dep_karyawan_combobox";
             dep_karyawan_combobox.Size = new Size(121, 23);
@@ -105,6 +111,7 @@
             insert_btn.TabIndex = 7;
             insert_btn.Text = "Insert";
             insert_btn.UseVisualStyleBackColor = true;
+            insert_btn.Click += insert_karyawan_baru;
             // 
             // edit_btn
             // 
@@ -115,6 +122,7 @@
             edit_btn.TabIndex = 8;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = true;
+            edit_btn.Click += Edit_Karyawan;
             // 
             // delete_btn
             // 
@@ -125,14 +133,16 @@
             delete_btn.TabIndex = 9;
             delete_btn.Text = "Delete";
             delete_btn.UseVisualStyleBackColor = true;
+            delete_btn.Click += Delete_Karyawan;
             // 
-            // dataGridView1
+            // data_karyawan_grid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 264);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(577, 174);
-            dataGridView1.TabIndex = 10;
+            data_karyawan_grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            data_karyawan_grid.Location = new Point(12, 264);
+            data_karyawan_grid.Name = "data_karyawan_grid";
+            data_karyawan_grid.Size = new Size(577, 174);
+            data_karyawan_grid.TabIndex = 10;
+            data_karyawan_grid.CellClick += grid_cell_click;
             // 
             // richTextBox1
             // 
@@ -145,13 +155,21 @@
             richTextBox1.TabIndex = 11;
             richTextBox1.Text = "ID Departemen : \nHR : HR\nENG : Engineer\nDEV : developer\nPM : Product M\nFIN : Finance";
             // 
+            // mainWindowViewModelBindingSource
+            // 
+            mainWindowViewModelBindingSource.DataSource = typeof(ViewModel.MainWindowViewModel);
+            // 
+            // mainWindowViewModelBindingSource1
+            // 
+            mainWindowViewModelBindingSource1.DataSource = typeof(ViewModel.MainWindowViewModel);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(601, 450);
             Controls.Add(richTextBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(data_karyawan_grid);
             Controls.Add(delete_btn);
             Controls.Add(edit_btn);
             Controls.Add(insert_btn);
@@ -164,7 +182,9 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)data_karyawan_grid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mainWindowViewModelBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mainWindowViewModelBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,7 +200,9 @@
         private Button insert_btn;
         private Button edit_btn;
         private Button delete_btn;
-        private DataGridView dataGridView1;
+        private DataGridView data_karyawan_grid;
         private RichTextBox richTextBox1;
+        private BindingSource mainWindowViewModelBindingSource;
+        private BindingSource mainWindowViewModelBindingSource1;
     }
 }
